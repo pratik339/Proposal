@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Proposal</title>
+<style>
+  body {
+    background-color: #fce4ec; /* Pale pink background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Hide horizontal overflow */
+    font-size: 10px; /* Font size set to 10px */
+  }
+  .page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  #loveText {
+    color: black;
+    font-size: 25px; /* Font size set to 25px */
+    margin-top: 20px; /* Adjusted margin for better spacing */
+  }
+  #loveText .highlight {
+    color: #ff4d6b; /* Pinkish red for 'love' */
+    font-weight: bold;
+    align-items: center;
+  }
+  #puppy {
+    margin-top: 50px;
+    width: 300px;
+    height: auto;
+  }
+  #buttons {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .button {
+    background-color: #ff4d6b; /* Pinkish red for buttons */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    margin: 0 20px;
+  }
+  .button:hover {
+    background-color: #ff6384; /* Lighter shade on hover */
+  }
+  #heart {
+    font-size: 48px;
+    animation: heartbeat 1s infinite;
+  }
+  @keyframes heartbeat {
+    0% { transform: scale(0.8); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(0.8); }
+  }
+
+  /* Media Query for Mobile Devices */
+  @media only screen and (max-width: 600px) {
+    #loveText {
+      font-size: 18px; /* Adjust font size for smaller screens */
+    }
+    #puppy {
+      width: 200px; /* Adjust image size for smaller screens */
+    }
+    .button {
+      padding: 10px 20px; /* Adjust button padding for smaller screens */
+      font-size: 16px; /* Adjust button font size for smaller screens */
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page-container" id="firstPart">
+  <div id="loveText">Hey there, um..can I tell you something????</div>
+  <div id="loveText">I... I kinda have big <span class="highlight"> Crush</span> on you !!!</div>
+  <div id="loveText">Do you feel the same way?</div>
+  <img id="puppy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuIgR2aq3iZdbAXvjxP6IYHhKUu0gfcByuETzzTb6fBw&s" alt="Cute puppy">
+  <div id="buttons">
+    <button id="noButton" class="button" onclick="runAway()">No</button>
+    <button id="yesButton" class="button" onclick="showMessage()">Yes</button>
+  </div>
+</div>
+
+<!-- Love Page -->
+<div class="page-container" id="message" style="display: none;">
+  <div class="message-container">
+    <div id="loveText">Yeah....I love you 3000, darling ❤️</div>
+    <div id="heart">❤️</div>
+    <img id="puppy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoM1DaQym9gh_BRLm91wXYb8gzhFI0c0f41bIM0GOznGQDqC5S7G-zHq_ys2l366UrI-0&usqp=CAU" alt="Love You">
+  </div>
+</div>
+
+<script>
+function runAway() {
+  var noButton = document.getElementById("noButton");
+  var x = Math.random() * window.innerWidth;
+  var y = Math.random() * window.innerHeight;
+  noButton.style.position = "absolute";
+  noButton.style.left = x + "px";
+  noButton.style.top = y + "px";
+}
+
+function showMessage() {
+  var firstPart = document.getElementById("firstPart");
+  firstPart.style.display = "none";
+  
+  var message = document.getElementById("message");
+  message.style.display = "flex";
+}
+</script>
+</body>
+</html>
